@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="keyboard">
+    <div
+      *ngFor="let row of letters"
+      class="row justify-content-center keyboard__row"
+    >
+      <button
+        *ngFor="let letter of row"
+        class="key--letter"
+        (click)="onLetterClick(letter)"
+        [disabled]="isLetterUsed(letter)"
+      >
+        {{ letter }}
+      </button>
+    </div>
+  </div>
+</div>

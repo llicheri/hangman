@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.sass"]
 })
 export class AppComponent {
-  title = 'hangman';
+  title = "hangman";
+
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    this.router.navigateByUrl("word-choice");
+  }
 }

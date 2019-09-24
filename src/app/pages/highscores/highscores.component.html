@@ -1,0 +1,19 @@
+<h3 class="d-flex justify-content-center mb-3">HIGHSCORES</h3>
+<table *ngIf="highscores.length" class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Time</th>
+      <th scope="col">Remaining attempts</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let high of highscores">
+      <td>{{ high.time }}</td>
+      <td>{{ high.remainingAttempts }}</td>
+    </tr>
+  </tbody>
+</table>
+<div *ngIf="!highscores.length" class="mt-3 d-flex justify-content-center">
+  <i class="fa fa-search mr-3" style="font-size: larger"></i>
+  NO PREVIOUS HIGSCORES
+</div>
